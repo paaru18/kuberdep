@@ -15,11 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/paarvathii:v1
+      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/paaru_18:v1
     - name: Login to Docker Hub
       uses: docker/login-action@v2
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Build and push Docker image
-      run: docker push ${{ secrets.DOCKER_USERNAME }}/paarvathii:v1
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/paaru_18:v1
